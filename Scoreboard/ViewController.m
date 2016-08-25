@@ -19,7 +19,8 @@
 - (IBAction)buttonPressed:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UILabel *usLabel;
 @property (strong, nonatomic) IBOutlet UILabel *themLabel;
-@property (strong, nonatomic) IBOutlet UILabel *Pis;
+@property (strong, nonatomic) IBOutlet UILabel *piOne;
+@property (strong, nonatomic) IBOutlet UILabel *piTwo;
 @property (strong, nonatomic) IBOutlet UIButton *resetScoreButton;
 - (IBAction)resetScores:(UIButton *)sender;
 
@@ -41,7 +42,8 @@
     
     [self.usLabel setText:@"Us"];
     [self.themLabel setText:@"Them"];
-    [self.Pis setText:@"Pi"];
+    [self.piOne setText:[NSString stringWithFormat:@"π"]];
+    [self.piTwo setText:[NSString stringWithFormat:@"π"]];
     [self.resetScoreButton setTitle:@"Reset Score" forState:UIControlStateNormal];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -66,6 +68,8 @@
     [self.rightScoreButton setTitle:[NSString stringWithFormat:@"%@", @(++self.rightScore)] forState:UIControlStateNormal];
     }
 }
+
+
 - (IBAction)resetScores:(UIButton *)sender {
     [self.leftScoreButton setTitle:@"0" forState:UIControlStateNormal];
     self.rightScore = 0;
