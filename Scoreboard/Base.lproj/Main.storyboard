@@ -109,12 +109,7 @@
                     </view>
                     <connections>
                         <outlet property="leftScoreButton" destination="xCs-Cd-L4X" id="2ez-Td-hKk"/>
-                        <outlet property="piOne" destination="J0L-KF-8FZ" id="ySA-x3-a26"/>
-                        <outlet property="piTwo" destination="aG0-QU-NFy" id="05z-XD-Eb1"/>
-                        <outlet property="resetScoreButton" destination="b6r-ZF-WEW" id="bkK-pr-MNk"/>
                         <outlet property="rightScoreButton" destination="H4w-f8-9GU" id="J37-Yp-EUM"/>
-                        <outlet property="themLabel" destination="LUm-at-qjE" id="dam-08-pxw"/>
-                        <outlet property="usLabel" destination="auz-Te-8VK" id="tK4-2l-tFV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

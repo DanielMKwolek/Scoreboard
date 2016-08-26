@@ -14,14 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightScoreButton;
 @property (nonatomic)NSInteger leftScore;
 @property (nonatomic)NSInteger rightScore;
-
-
 - (IBAction)buttonPressed:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UILabel *usLabel;
-@property (strong, nonatomic) IBOutlet UILabel *themLabel;
-@property (strong, nonatomic) IBOutlet UILabel *piOne;
-@property (strong, nonatomic) IBOutlet UILabel *piTwo;
-@property (strong, nonatomic) IBOutlet UIButton *resetScoreButton;
 - (IBAction)resetScores:(UIButton *)sender;
 
 
@@ -35,18 +28,13 @@
     [super viewDidLoad];
     
     self.leftScore = 0;
-    [self.leftScoreButton setTitle:@"0" forState:UIControlStateNormal];
-    
     self.rightScore = 0;
-    [self.rightScoreButton setTitle:@"0" forState:UIControlStateNormal];
-    
-    [self.usLabel setText:@"Us"];
-    [self.themLabel setText:@"Them"];
-    [self.piOne setText:[NSString stringWithFormat:@"π"]];
-    [self.piTwo setText:[NSString stringWithFormat:@"π"]];
-    [self.resetScoreButton setTitle:@"Reset Score" forState:UIControlStateNormal];
-    
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (void)updateview
+{
+        [self.leftScoreButton setTitle:[NSString stringWithFormat:@"%@", @(_leftScore)]  forState:UIControlStateNormal];
+        [self.rightScoreButton setTitle:[NSString stringWithFormat:@"%@", @(_rightScore)] forState:UIControlStateNormal];
 }
 
 
@@ -60,21 +48,22 @@
     
     if (sender == self.leftScoreButton)
     {
-    [self.leftScoreButton setTitle:[NSString stringWithFormat:@"%@", @(++self.leftScore)] forState:UIControlStateNormal];
+        _leftScore++;
     }
     
     if (sender == self.rightScoreButton)
     {
-    [self.rightScoreButton setTitle:[NSString stringWithFormat:@"%@", @(++self.rightScore)] forState:UIControlStateNormal];
+        _rightScore++;
     }
+    
+    [self updateview];
 }
 
 
 - (IBAction)resetScores:(UIButton *)sender {
-    [self.leftScoreButton setTitle:@"0" forState:UIControlStateNormal];
+
     self.rightScore = 0;
-    
-    [self.rightScoreButton setTitle:@"0" forState:UIControlStateNormal];
     self.leftScore = 0;
+    [self updateview];
 }
 @end
